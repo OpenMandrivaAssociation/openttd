@@ -3,7 +3,7 @@ Version: 0.5.3
 Release: %mkrel 1
 Summary: An open source clone of the Microprose game "Transport Tycoon Deluxe" game
 Summary(pt_BR): Um clone do jogo "Transport Tycoon Deluxe" da Microprose.
-Group: Games
+Group: Games/Other
 Group(pt_BR): Jogos
 Group(es): Juegos
 License: GPL
