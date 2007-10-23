@@ -1,5 +1,5 @@
 Name: openttd
-Version: 0.5.2
+Version: 0.5.3
 Release: %mkrel 1
 Summary: An open source clone of the Microprose game "Transport Tycoon Deluxe" game
 Summary(pt_BR): Um clone do jogo "Transport Tycoon Deluxe" da Microprose.
@@ -42,7 +42,7 @@ para funcionar:
   - trgir.grf
   - trgtr.grf
 Se você tem o jogo original, copie estes arquivos para %{_datadir}/games/openttd/data e divirta-se :)
-  
+
 #-------------------------------------------------------------------------------
 
 %prep
@@ -71,7 +71,7 @@ CONFIG_VERSION:=6
 %build
 %make
 
-%install 
+%install
 make install DEST_DIR:=%{buildroot}
 mkdir -p %{buildroot}%{_datadir}/icons/hicolor/32x32/apps
 mkdir -p %{buildroot}%{_datadir}/icons/hicolor/64x64/apps
@@ -86,7 +86,7 @@ install -m 0644 %{_sourcedir}/openttd.desktop %{buildroot}%{_datadir}/applicatio
 %clean
 rm -rf %{buildroot}
 
-%files 
+%files
 %defattr(0644,root,root,0755)
 %attr(0755,root,root) %{_prefix}/games/openttd
 %dir %{_datadir}/games/openttd
