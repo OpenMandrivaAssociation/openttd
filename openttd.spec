@@ -16,6 +16,7 @@ BuildRequires: libpng-devel
 BuildRequires: SDL-devel
 BuildRequires: libz-devel
 BuildRequires: X11-devel
+Buildroot: %{_tmppath}/%{name}-%{version}-root
 
 %description
 OpenTTD is an open source clone of the Microprose game "Transport Tycoon Deluxe" game.
