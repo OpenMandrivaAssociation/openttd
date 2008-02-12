@@ -19,7 +19,8 @@ BuildRequires: X11-devel
 Buildroot: %{_tmppath}/%{name}-%{version}-root
 
 %description
-OpenTTD is an open source clone of the Microprose game "Transport Tycoon Deluxe" game.
+OpenTTD is an open source clone of the Microprose game "Transport Tycoon
+Deluxe" game.
 Note: OpenTTD requires these data files from the original Windows version
 of Transport Tycoon Deluxe in order to function:
   - sample.cat
@@ -28,20 +29,21 @@ of Transport Tycoon Deluxe in order to function:
   - trghr.grf
   - trgir.grf
   - trgtr.grf
-If you have the original game, just copy these files into %{_datadir}/games/openttd/data
- and have fun :)
+If you have the original game, just copy these files into
+%{_datadir}/games/openttd/data  and have fun :)
 
 %description -l pt_BR
 OpenTTD é uma clone do jogo "Transport Tycoon Deluxe" da Microprose.
-Obs: OpenTTD requer os seguintes arquivos da versão Windows do Transport Tycoon Deluxe original
-para funcionar:
+Obs: OpenTTD requer os seguintes arquivos da versão Windows do Transport Tycoon
+Deluxe original para funcionar:
   - sample.cat
   - trg1r.grf
   - trgcr.grf
   - trghr.grf
   - trgir.grf
   - trgtr.grf
-Se você tem o jogo original, copie estes arquivos para %{_datadir}/games/openttd/data e divirta-se :)
+Se você tem o jogo original, copie estes arquivos para
+%{_datadir}/games/openttd/data e divirta-se :)
 
 #-------------------------------------------------------------------------------
 
