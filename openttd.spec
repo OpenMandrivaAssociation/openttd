@@ -1,5 +1,5 @@
 Name: openttd
-Version: 0.5.3
+Version: 0.6.0
 Release: %mkrel 1
 Summary: An open source clone of the Microprose game "Transport Tycoon Deluxe" game
 Summary(pt_BR): Um clone do jogo "Transport Tycoon Deluxe" da Microprose.
@@ -51,35 +51,18 @@ Se você tem o jogo original, copie estes arquivos para
 rm -rf %{buildroot}
 
 %setup -q -n %{name}-%{version}
-echo "
-WITH_NETWORK:=1
-INSTALL:=1
-PREFIX:=%{_prefix}
-BINARY_DIR:=games
-DATA_DIR:=share/games/openttd
-USE_HOMEDIR:=~
-PERSONAL_DIR:=.openttd
-SECOND_DATA_PATH:=
-CUSTOM_LANG_PATH:=
-WITH_ZLIB:=1
-WITH_SDL:=1.2.8
-WITH_PNG:=1.2.8
-UNIX:=1
-SDL-CONFIG:=sdl-config
-CONFIG_INCLUDED:=yes
-CONFIG_VERSION:=6
-" > Makefile.config
+./configure --prefix-dir=%{_prefix}
 
 %build
 %make
 
 %install
-make install DEST_DIR:=%{buildroot}
+make INSTALL_DIR=%{buildroot} install
 mkdir -p %{buildroot}%{_datadir}/icons/hicolor/32x32/apps
 mkdir -p %{buildroot}%{_datadir}/icons/hicolor/64x64/apps
-mv %{buildroot}%{_prefix}/openttd.32.xpm %{buildroot}%{_datadir}/icons/hicolor/32x32/apps/openttd.xpm
-mv %{buildroot}%{_prefix}/openttd.64.png %{buildroot}%{_datadir}/icons/hicolor/64x64/apps/openttd.png
-rm -f %{buildroot}%{_prefix}/openttd.32.bmp
+mv %{buildroot}%{_prefix}/share/pixmaps/openttd.32.xpm %{buildroot}%{_datadir}/icons/hicolor/32x32/apps/openttd.xpm
+mv %{buildroot}%{_prefix}/share/pixmaps/openttd.64.png %{buildroot}%{_datadir}/icons/hicolor/64x64/apps/openttd.png
+rm -rf %{buildroot}%{_prefix}/share/pixmaps
 
 # desktop file
 mkdir -p %{buildroot}%{_datadir}/applications
