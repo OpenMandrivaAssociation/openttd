@@ -60,8 +60,8 @@ rm -rf %{buildroot}
 make INSTALL_DIR=%{buildroot} install
 mkdir -p %{buildroot}%{_datadir}/icons/hicolor/32x32/apps
 mkdir -p %{buildroot}%{_datadir}/icons/hicolor/64x64/apps
-mv %{buildroot}%{_prefix}/share/pixmaps/openttd.32.xpm %{buildroot}%{_datadir}/icons/hicolor/32x32/apps/openttd.xpm
-mv %{buildroot}%{_prefix}/share/pixmaps/openttd.64.png %{buildroot}%{_datadir}/icons/hicolor/64x64/apps/openttd.png
+#mv %{buildroot}%{_prefix}/share/pixmaps/openttd.32.xpm %{buildroot}%{_datadir}/icons/hicolor/32x32/apps/openttd.xpm
+#mv %{buildroot}%{_prefix}/share/pixmaps/openttd.64.png %{buildroot}%{_datadir}/icons/hicolor/64x64/apps/openttd.png
 rm -rf %{buildroot}%{_prefix}/share/pixmaps
 
 # desktop file
