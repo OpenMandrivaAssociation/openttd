@@ -58,8 +58,8 @@ rm -rf %{buildroot}
 
 %install
 make INSTALL_DIR=%{buildroot} install
-mkdir -p %{buildroot}%{_datadir}/icons/hicolor/32x32/apps
-mkdir -p %{buildroot}%{_datadir}/icons/hicolor/64x64/apps
+#mkdir -p %{buildroot}%{_datadir}/icons/hicolor/32x32/apps
+#mkdir -p %{buildroot}%{_datadir}/icons/hicolor/64x64/apps
 #mv %{buildroot}%{_prefix}/share/pixmaps/openttd.32.xpm %{buildroot}%{_datadir}/icons/hicolor/32x32/apps/openttd.xpm
 #mv %{buildroot}%{_prefix}/share/pixmaps/openttd.64.png %{buildroot}%{_datadir}/icons/hicolor/64x64/apps/openttd.png
 rm -rf %{buildroot}%{_prefix}/share/pixmaps
@@ -76,6 +76,15 @@ rm -rf %{buildroot}
 %attr(0755,root,root) %{_prefix}/games/openttd
 %dir %{_datadir}/games/openttd
 %{_datadir}/games/openttd/*
-%{_datadir}/icons/hicolor/32x32/apps/openttd.xpm
-%{_datadir}/icons/hicolor/64x64/apps/openttd.png
 %{_datadir}/applications/openttd.desktop
+%{_datadir}/doc/openttd/32bpp.txt
+%{_datadir}/doc/openttd/multiplayer.txt
+%{_datadir}/icons/hicolor/128x128/apps/openttd.128.png
+%{_datadir}/icons/hicolor/16x16/apps/openttd.16.png
+%{_datadir}/icons/hicolor/256x256/apps/openttd.256.png
+%{_datadir}/icons/hicolor/32x32/apps/openttd.32.png
+%{_datadir}/icons/hicolor/48x48/apps/openttd.48.png
+%{_datadir}/icons/hicolor/64x64/apps/openttd.64.png
+%{_mandir}/man6/openttd.6.lzma
+#%{_datadir}/icons/hicolor/32x32/apps/openttd.32.xpm
+#%{_datadir}/icons/hicolor/32x32/apps/openttd.xpm
