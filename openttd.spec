@@ -1,6 +1,6 @@
 Name: openttd
 Version: 0.6.3
-Release: %mkrel 1
+Release: %mkrel 2
 Summary: An open source clone of the Microprose game "Transport Tycoon Deluxe" game
 Summary(pt_BR): Um clone do jogo "Transport Tycoon Deluxe" da Microprose.
 Group: Games/Other
