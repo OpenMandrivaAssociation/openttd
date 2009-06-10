@@ -1,6 +1,6 @@
 Name: openttd
-Version: 0.6.3
-Release: %mkrel 2
+Version: 0.7.1
+Release: %mkrel 1
 Summary: An open source clone of the Microprose game "Transport Tycoon Deluxe" game
 Summary(pt_BR): Um clone do jogo "Transport Tycoon Deluxe" da Microprose.
 Group: Games/Other
@@ -74,13 +74,16 @@ rm -rf %{buildroot}
 %{_datadir}/games/openttd/*
 %{_datadir}/applications/openttd.desktop
 %{_datadir}/doc/openttd/32bpp.txt
-%{_datadir}/doc/openttd/multiplayer.txt
-%{_datadir}/icons/hicolor/128x128/apps/openttd.128.png
-%{_datadir}/icons/hicolor/16x16/apps/openttd.16.png
-%{_datadir}/icons/hicolor/256x256/apps/openttd.256.png
-%{_datadir}/icons/hicolor/32x32/apps/openttd.32.png
-%{_datadir}/icons/hicolor/48x48/apps/openttd.48.png
-%{_datadir}/icons/hicolor/64x64/apps/openttd.64.png
+%{_datadir}/icons/hicolor/128x128/apps/openttd.png
+%{_datadir}/icons/hicolor/16x16/apps/openttd.png
+%{_datadir}/icons/hicolor/256x256/apps/openttd.png
+%{_datadir}/icons/hicolor/32x32/apps/openttd.png
+%{_datadir}/icons/hicolor/48x48/apps/openttd.png
+%{_datadir}/icons/hicolor/64x64/apps/openttd.png
+%{_docdir}/openttd/multiplayer.txt
+%{_docdir}/openttd/COPYING
+%{_docdir}/openttd/changelog.txt
+%{_docdir}/openttd/known-bugs.txt
+%{_docdir}/openttd/obg_format.txt
+%{_docdir}/openttd/readme.txt
 %{_mandir}/man6/openttd.6.lzma
-#%{_datadir}/icons/hicolor/32x32/apps/openttd.32.xpm
-#%{_datadir}/icons/hicolor/32x32/apps/openttd.xpm
