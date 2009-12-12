@@ -1,6 +1,6 @@
 Name: openttd
-Version: 0.7.2
-Release: %mkrel 1
+Version: 0.7.4
+Release: %mkrel 2
 Summary: An open source clone of the Microprose game "Transport Tycoon Deluxe" game
 Summary(pt_BR): Um clone do jogo "Transport Tycoon Deluxe" da Microprose.
 Group: Games/Other
@@ -10,12 +10,15 @@ License: GPL
 URL: http://www.openttd.org
 Source: http://prdownloads.sourceforge.net/openttd/%{name}-%{version}-source.tar.bz2
 Source1: openttd.desktop
+Source2: opengfx-0.2.0.zip
+Source3: opensfx-0.2.0.zip
 BuildRequires: alsa-lib-devel
 BuildRequires: esound-devel
 BuildRequires: libpng-devel
 BuildRequires: SDL-devel
 BuildRequires: libz-devel
 BuildRequires: X11-devel
+BuildRequires: unzip
 Buildroot: %{_tmppath}/%{name}-%{version}-root
 
 %description
@@ -63,6 +66,12 @@ rm -rf %{buildroot}%{_prefix}/share/pixmaps
 # desktop file
 mkdir -p %{buildroot}%{_datadir}/applications
 install -m 0644 %{_sourcedir}/openttd.desktop %{buildroot}%{_datadir}/applications/
+
+# gfx and sfx data
+cd %{buildroot}%{_datadir}/games/%{name}/data
+unzip %{SOURCE2}
+unzip %{SOURCE3}
+touch sample.cat
 
 %clean
 rm -rf %{buildroot}
