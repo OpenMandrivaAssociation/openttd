@@ -1,6 +1,6 @@
 Name:		openttd
 Version:	1.0.0
-Release:	%mkrel 0.beta1
+Release:	%mkrel 1
 Summary:	An open source clone of the Microprose game "Transport Tycoon Deluxe" game
 Summary(pt_BR):	Um clone do jogo "Transport Tycoon Deluxe" da Microprose.
 Group:		Games/Other
@@ -8,7 +8,7 @@ Group(pt_BR):	Jogos
 Group(es):	Juegos
 License:	GPL
 URL:		http://www.openttd.org
-Source:		http://prdownloads.sourceforge.net/openttd/%{name}-%{version}-beta1-source.tar.bz2
+Source:		http://prdownloads.sourceforge.net/openttd/%{name}-%{version}-source.tar.bz2
 Source1:	openttd.desktop
 Source2:	opengfx-0.2.0.zip
 Source3:	opensfx-0.2.0.zip
@@ -33,7 +33,7 @@ OpenTTD é uma clone do jogo "Transport Tycoon Deluxe" da Microprose.
 %prep
 rm -rf %{buildroot}
 
-%setup -q -n %{name}-%{version}-beta1
+%setup -q -n %{name}-%{version}
 
 
 %build
@@ -75,5 +75,7 @@ rm -rf %{buildroot}
 %{_docdir}/openttd/changelog.txt
 %{_docdir}/openttd/known-bugs.txt
 %{_docdir}/openttd/obg_format.txt
+%{_docdir}/openttd/obm_format.txt
+%{_docdir}/openttd/obs_format.txt
 %{_docdir}/openttd/readme.txt
 %{_mandir}/man6/openttd.6.lzma
