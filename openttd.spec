@@ -1,25 +1,25 @@
-Name: openttd
-Version: 1.0.0
-Release: %mkrel 0.beta1
-Summary: An open source clone of the Microprose game "Transport Tycoon Deluxe" game
-Summary(pt_BR): Um clone do jogo "Transport Tycoon Deluxe" da Microprose.
-Group: Games/Other
-Group(pt_BR): Jogos
-Group(es): Juegos
-License: GPL
-URL: http://www.openttd.org
-Source: http://prdownloads.sourceforge.net/openttd/%{name}-%{version}-beta1-source.tar.bz2
-Source1: openttd.desktop
-Source2: opengfx-0.2.0.zip
-Source3: opensfx-0.2.0.zip
-BuildRequires: alsa-lib-devel
-BuildRequires: esound-devel
-BuildRequires: libpng-devel
-BuildRequires: SDL-devel
-BuildRequires: libz-devel
-BuildRequires: X11-devel
-BuildRequires: unzip
-Buildroot: %{_tmppath}/%{name}-%{version}-root
+Name:		openttd
+Version:	1.0.0
+Release:	%mkrel 0.beta1
+Summary:	An open source clone of the Microprose game "Transport Tycoon Deluxe" game
+Summary(pt_BR):	Um clone do jogo "Transport Tycoon Deluxe" da Microprose.
+Group:		Games/Other
+Group(pt_BR):	Jogos
+Group(es):	Juegos
+License:	GPL
+URL:		http://www.openttd.org
+Source:		http://prdownloads.sourceforge.net/openttd/%{name}-%{version}-beta1-source.tar.bz2
+Source1:	openttd.desktop
+Source2:	opengfx-0.2.0.zip
+Source3:	opensfx-0.2.0.zip
+BuildRequires:	alsa-lib-devel
+BuildRequires:	esound-devel
+BuildRequires:	libpng-devel
+BuildRequires:	SDL-devel
+BuildRequires:	libz-devel
+BuildRequires:	X11-devel
+BuildRequires:	unzip
+Buildroot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 OpenTTD is an open source clone of the Microprose game "Transport Tycoon
@@ -34,9 +34,10 @@ OpenTTD é uma clone do jogo "Transport Tycoon Deluxe" da Microprose.
 rm -rf %{buildroot}
 
 %setup -q -n %{name}-%{version}-beta1
-./configure --prefix-dir=%{_prefix}
+
 
 %build
+./configure --prefix-dir=%{_prefix}
 %make
 
 %install
