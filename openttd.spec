@@ -6,12 +6,13 @@ Summary(pt_BR):	Um clone do jogo "Transport Tycoon Deluxe" da Microprose.
 Group:		Games/Other
 Group(pt_BR):	Jogos
 Group(es):	Juegos
-License:	GPL
+License:	GPLv2
 URL:		http://www.openttd.org
 Source:		http://prdownloads.sourceforge.net/openttd/%{name}-%{version}-source.tar.bz2
 Source1:	openttd.desktop
-Source2:	opengfx-0.2.0.zip
-Source3:	opensfx-0.2.0.zip
+Source2:        http://bundles.openttdcoop.org/opengfx/releases/opengfx-0.2.3.zip
+Source3:        http://bundles.openttdcoop.org/opensfx/releases/opensfx-0.2.3.zip
+Source4:        http://bundles.openttdcoop.org/openmsx/releases/openmsx-0.2.1.zip
 BuildRequires:	alsa-lib-devel
 BuildRequires:	esound-devel
 BuildRequires:	libpng-devel
@@ -19,6 +20,8 @@ BuildRequires:	SDL-devel
 BuildRequires:	libz-devel
 BuildRequires:	X11-devel
 BuildRequires:	unzip
+BuildRequires:  liblzo-devel
+Requires:       TiMidity++
 Buildroot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
@@ -37,6 +40,7 @@ rm -rf %{buildroot}
 
 
 %build
+%serverbuild
 ./configure --prefix-dir=%{_prefix}
 %make
 
@@ -53,6 +57,10 @@ cd %{buildroot}%{_datadir}/games/%{name}/data
 unzip %{SOURCE2}
 unzip %{SOURCE3}
 touch sample.cat
+
+# msx data
+cd %{buildroot}%{_datadir}/games/%{name}/gm
+unzip %{SOURCE4}
 
 %clean
 rm -rf %{buildroot}
