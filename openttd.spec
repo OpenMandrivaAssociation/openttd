@@ -1,6 +1,6 @@
 Name:		openttd
 Version:	1.0.0
-Release:	%mkrel 2
+Release:	%mkrel 3
 
 Summary:	An open source clone of the Microprose game "Transport Tycoon Deluxe" game
 Group:		Games/Strategy
@@ -17,6 +17,7 @@ BuildRequires:	fontconfig-devel
 BuildRequires:	liblzo-devel
 BuildRequires:	icu-devel
 BuildRequires:	unzip
+BuildRequires:	ccache
 Requires:	TiMidity++
 Requires:	openttd-opengfx
 Requires:	openttd-opensfx
@@ -31,8 +32,13 @@ Deluxe" game.
 %setup -q -n %{name}-%{version}
 
 %build
-%serverbuild
-./configure --prefix-dir=%{_prefix}
+export CFLAGS="%{optflags}"
+export CXXFLAGS="%{optflags}"
+export LDFLAGS="%{ldflags}"
+
+./configure \
+	--prefix-dir=%{_prefix} \
+	--with-ccache
 %make
 
 %install
@@ -40,7 +46,7 @@ rm -rf %{buildroot}
 make INSTALL_DIR=%{buildroot} install
 
 #cleanup
-rm -rf %{buildroot}%{_prefix}/share/pixmaps
+rm -rf %{buildroot}%{_datadir}/pixmaps
 
 # desktop file
 mkdir -p %{buildroot}%{_datadir}/applications
