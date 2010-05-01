@@ -1,5 +1,5 @@
 %define version	1.0.1
-%define pre	RC2
+%define pre	0
 %define rel	1
 
 %if %pre
