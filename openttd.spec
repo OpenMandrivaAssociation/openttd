@@ -1,4 +1,4 @@
-%define version	1.0.1
+%define version	1.0.2
 %define pre	0
 %define rel	1
 
@@ -21,7 +21,6 @@ Group:		Games/Strategy
 License:	GPLv2
 URL:		http://www.openttd.org
 Source:		%{source}
-Source1:	openttd.desktop
 
 BuildRequires:	libpng-devel
 BuildRequires:	SDL-devel
@@ -62,9 +61,11 @@ make INSTALL_DIR=%{buildroot} install
 #cleanup
 rm -rf %{buildroot}%{_datadir}/pixmaps
 
-# desktop file
-mkdir -p %{buildroot}%{_datadir}/applications
-install -m 0644 %{SOURCE1} %{buildroot}%{_datadir}/applications/
+# fix desktop file
+desktop-file-install --dir=%{buildroot}%{_datadir}/applications \
+        --add-category=StrategyGame \
+        --remove-key=Version \
+	%{buildroot}%{_datadir}/applications/openttd.desktop
 
 %clean
 rm -rf %{buildroot}
