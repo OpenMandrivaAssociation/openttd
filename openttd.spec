@@ -1,5 +1,5 @@
-%define version	1.0.2
-%define pre	0
+%define version	1.0.3
+%define pre	RC1
 %define rel	1
 
 %if %pre
@@ -56,7 +56,7 @@ export LDFLAGS="%{ldflags}"
 
 %install
 rm -rf %{buildroot}
-make INSTALL_DIR=%{buildroot} install
+%make INSTALL_DIR=%{buildroot} install
 
 #cleanup
 rm -rf %{buildroot}%{_datadir}/pixmaps
