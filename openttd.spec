@@ -25,6 +25,7 @@ Source:		%{source}
 BuildRequires:	libpng-devel
 BuildRequires:	SDL-devel
 BuildRequires:	libz-devel
+BuildRequires:	liblzma-devel
 BuildRequires:	freetype-devel
 BuildRequires:	fontconfig-devel
 BuildRequires:	liblzo-devel
