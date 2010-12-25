@@ -1,14 +1,14 @@
-%define version	1.0.5
-%define pre	0
+%define version	1.1.0
+%define pre	beta1
 %define rel	1
 
 %if %pre
 %define release	%mkrel -c %{pre} %{rel}
-%define source	http://binaries.openttd.org/releases/%{version}-%{pre}/%{name}-%{version}-%{pre}-source.tar.bz2
+%define source	http://binaries.openttd.org/releases/%{version}-%{pre}/%{name}-%{version}-%{pre}-source.tar.gz
 %define dirname	%{name}-%{version}-%{pre}
 %else
 %define release	%mkrel %{rel}
-%define source	http://binaries.openttd.org/releases/%{version}/%{name}-%{version}-source.tar.bz2
+%define source	http://binaries.openttd.org/releases/%{version}/%{name}-%{version}-source.tar.gz
 %define dirname %{name}-%{version}
 %endif
 
@@ -52,7 +52,7 @@ export LDFLAGS="%{ldflags}"
 ./configure \
 	--prefix-dir=%{_prefix} \
 	--with-ccache
-%make
+%make VERBOSE=1
 
 %install
 rm -rf %{buildroot}
