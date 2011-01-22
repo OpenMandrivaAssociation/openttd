@@ -1,6 +1,6 @@
 %define name	openttd
 %define version	1.1.0
-%define pre	beta3
+%define pre	beta4
 %define rel	1
 
 %if %pre
@@ -53,12 +53,13 @@ export LDFLAGS="%{ldflags}"
 
 ./configure \
 	--prefix-dir=%{_prefix} \
+	--install-dir=%{buildroot} \
 	--with-ccache
 %make VERBOSE=1
 
 %install
 rm -rf %{buildroot}
-%make INSTALL_DIR=%{buildroot} install
+%makeinstall_std
 
 #cleanup
 rm -rf %{buildroot}%{_datadir}/pixmaps
