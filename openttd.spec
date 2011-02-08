@@ -33,6 +33,7 @@ BuildRequires:	liblzo-devel
 BuildRequires:	icu-devel
 BuildRequires:	unzip
 BuildRequires:	ccache
+BuildRequires:	desktop-file-utils
 Requires:	TiMidity++
 Requires:	openttd-opengfx
 Requires:	openttd-opensfx
