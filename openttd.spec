@@ -1,10 +1,13 @@
 %define name	openttd
 %define version	1.1.0
-%define pre	rc1
+%define pre	RC1
 %define rel	1
 
 %if %pre
-%define release	%mkrel -c %{pre} %{rel}
+# use lowercase %%pre in %%release
+# because e.g. RC1 < beta1 (in ASCII R=82 and b=98)
+%define lpre    %(echo %{pre} | tr A-Z a-z)
+%define release	%mkrel -c %{lpre} %{rel}
 %define source	http://binaries.openttd.org/releases/%{version}-%{pre}/%{name}-%{version}-%{pre}-source.tar.gz
 %define dirn	%{name}-%{version}-%{pre}
 %else
