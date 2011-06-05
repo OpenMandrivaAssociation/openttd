@@ -1,7 +1,7 @@
 %define name	openttd
 %define version	1.1.1
 %define pre	0
-%define rel	1
+%define rel	2
 
 %if %pre
 # use lowercase %%pre in %%release
