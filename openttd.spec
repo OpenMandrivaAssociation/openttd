@@ -1,7 +1,7 @@
 %define name	openttd
-%define version	1.1.1
+%define version	1.1.3
 %define pre	0
-%define rel	2
+%define rel	1
 
 %if %pre
 # use lowercase %%pre in %%release
@@ -12,7 +12,7 @@
 %define dirn	%{name}-%{version}-%{pre}
 %else
 %define release	%mkrel %{rel}
-%define source	http://binaries.openttd.org/releases/%{version}/%{name}-%{version}-source.tar.gz
+%define source	http://binaries.openttd.org/releases/%{version}/%{name}-%{version}-source.tar.xz
 %define dirn %{name}-%{version}
 %endif
 
