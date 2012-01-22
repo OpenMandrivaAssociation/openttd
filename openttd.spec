@@ -1,5 +1,5 @@
 %define name	openttd
-%define version	1.1.4
+%define version	1.1.5
 %define pre	0
 %define rel	1
 
