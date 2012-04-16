@@ -1,34 +1,32 @@
-%define name	openttd
-%define version	1.1.5
 %define pre	0
 %define rel	1
 
-%if %pre
+%if %{pre}
 # use lowercase %%pre in %%release
 # because e.g. RC1 < beta1 (in ASCII R=82 and b=98)
 %define lpre    %(echo %{pre} | tr A-Z a-z)
 %define release	%mkrel -c %{lpre} %{rel}
-%define source	http://binaries.openttd.org/releases/%{version}-%{pre}/%{name}-%{version}-%{pre}-source.tar.gz
+%define sname	%{version}-%{pre}/%{name}-%{version}-%{pre}
 %define dirn	%{name}-%{version}-%{pre}
 %else
 %define release	%mkrel %{rel}
-%define source	http://binaries.openttd.org/releases/%{version}/%{name}-%{version}-source.tar.xz
+%define sname	%{version}/%{name}-%{version}
 %define dirn %{name}-%{version}
 %endif
 
-Name:		%{name}
-Version:	%{version}
+Name:		openttd
+Version:	1.2.0
 Release:	%{release}
 
 Summary:	An open source clone of the Microprose game "Transport Tycoon Deluxe" game
 Group:		Games/Strategy
 License:	GPLv2
 URL:		http://www.openttd.org
-Source:		%{source}
+Source:		http://binaries.openttd.org/releases/%{sname}-source.tar.xz
 
-BuildRequires:	libpng-devel
+BuildRequires:	png-devel
 BuildRequires:	SDL-devel
-BuildRequires:	libz-devel
+BuildRequires:	zlib-devel
 BuildRequires:	liblzma-devel
 BuildRequires:	freetype-devel
 BuildRequires:	fontconfig-devel
@@ -38,10 +36,9 @@ BuildRequires:	unzip
 BuildRequires:	ccache
 BuildRequires:	desktop-file-utils
 Requires:	TiMidity++
-Requires:	openttd-opengfx
+Requires:	openttd-opengfx >= 0.4.4
 Requires:	openttd-opensfx
 Requires:	openttd-openmsx
-Buildroot:	%{_tmppath}/%{name}-%{version}-root
 
 %description
 OpenTTD is an open source clone of the Microprose game "Transport Tycoon
@@ -62,11 +59,11 @@ export LDFLAGS="%{ldflags}"
 %make VERBOSE=1
 
 %install
-rm -rf %{buildroot}
+%__rm -rf %{buildroot}
 %makeinstall_std
 
 #cleanup
-rm -rf %{buildroot}%{_datadir}/pixmaps
+%__rm -rf %{buildroot}%{_datadir}/pixmaps
 
 # fix desktop file
 desktop-file-install --dir=%{buildroot}%{_datadir}/applications \
@@ -75,10 +72,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications \
 	%{buildroot}%{_datadir}/applications/openttd.desktop
 
 %clean
-rm -rf %{buildroot}
+%__rm -rf %{buildroot}
 
 %files
-%defattr(-,root,root)
 %doc *.txt COPYING
 %{_gamesbindir}/openttd
 %{_gamesdatadir}/openttd
