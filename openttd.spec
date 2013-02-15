@@ -55,7 +55,7 @@ export LDFLAGS="%{ldflags}"
 ./configure \
 	--prefix-dir=%{_prefix} \
 	--install-dir=%{buildroot} \
-	--with-ccache
+	--with-ccache --enable-debug
 %make VERBOSE=1
 
 %install
