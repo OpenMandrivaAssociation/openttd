@@ -9,13 +9,13 @@
 %define sname	%{version}-%{pre}/%{name}-%{version}-%{pre}
 %define dirn	%{name}-%{version}-%{pre}
 %else
-%define release	%mkrel %{rel}
+%define release	%{rel}
 %define sname	%{version}/%{name}-%{version}
 %define dirn %{name}-%{version}
 %endif
 
 Name:		openttd
-Version:	1.2.1
+Version:	1.2.3
 Release:	%{release}
 
 Summary:	An open source clone of the Microprose game "Transport Tycoon Deluxe" game
