@@ -1,5 +1,5 @@
 Name:		openttd
-Version:	1.4.0
+Version:	1.4.3
 Release:	1
 Summary:	An open source clone of the Microprose game "Transport Tycoon Deluxe" game
 Group:		Games/Strategy
