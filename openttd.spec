@@ -13,7 +13,7 @@ BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(sdl)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	icu-devel
-BuildRequires:	liblzo-devel
+BuildRequires:	lzo-devel
 BuildRequires:	unzip
 BuildRequires:	ccache
 BuildRequires:	desktop-file-utils
