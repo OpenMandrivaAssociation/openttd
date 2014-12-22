@@ -1,0 +1,11 @@
+--- openttd-1.4.4/src/fontcache.cpp.omv~	2014-12-22 20:22:08.799022217 +0100
++++ openttd-1.4.4/src/fontcache.cpp	2014-12-22 20:23:16.546204990 +0100
+@@ -30,6 +30,8 @@ static const int MAX_FONT_SIZE     = 72;
+ static const int _default_font_height[FS_END]   = {10, 6, 18, 10};
+ static const int _default_font_ascender[FS_END] = { 8, 5, 15,  8};
+ 
++#define max(a,b) ((a) > (b) ? (a) : (b))
++
+ /**
+  * Create a new font cache.
+  * @param fs The size of the font.
