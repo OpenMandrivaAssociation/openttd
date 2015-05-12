@@ -15,6 +15,7 @@ BuildRequires:	pkgconfig(liblzma)
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(sdl)
 BuildRequires:	pkgconfig(zlib)
+BuildRequires:	ccache
 BuildRequires:	icu-devel
 BuildRequires:	lzo-devel
 BuildRequires:	unzip
