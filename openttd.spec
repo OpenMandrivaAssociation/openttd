@@ -1,7 +1,7 @@
 %define extra %{nil}
 
 Name:		openttd
-Version:	1.7.1
+Version:	1.7.2
 Release:	%{?%{extra}:1.%{extra}.}1
 Summary:	An open source clone of the Microprose game "Transport Tycoon Deluxe" game
 Group:		Games/Strategy
