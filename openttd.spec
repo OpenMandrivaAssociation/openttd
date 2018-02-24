@@ -15,7 +15,6 @@ BuildRequires:	pkgconfig(liblzma)
 BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(sdl)
 BuildRequires:	pkgconfig(zlib)
-BuildRequires:	ccache
 BuildRequires:	icu-devel
 BuildRequires:	lzo-devel
 BuildRequires:	unzip
@@ -41,7 +40,7 @@ export LDFLAGS="%{ldflags}"
 ./configure \
 	--prefix-dir=%{_prefix} \
 	--install-dir=%{buildroot} \
-	--with-ccache --enable-debug
+	--enable-debug
 
 %make VERBOSE=1
 
