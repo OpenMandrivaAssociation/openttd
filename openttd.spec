@@ -30,7 +30,8 @@ OpenTTD is an open source clone of the Microprose game "Transport Tycoon
 Deluxe" game.
 
 %prep
-%autosetup -p1 -n %{name}-%{version}%{?%{extra}:-%{extra}}
+%setup -qn %{name}-%{version}%{?%{extra}:-%{extra}}
+%apply_patches
 
 %build
 export CFLAGS="%{optflags}"
@@ -58,7 +59,6 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications \
 
 %files
 %doc *.txt COPYING
-%doc %{_docdir}/openttd
 %{_gamesbindir}/openttd
 %{_gamesdatadir}/openttd
 %{_datadir}/applications/openttd.desktop
