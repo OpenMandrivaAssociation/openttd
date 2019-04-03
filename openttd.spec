@@ -38,8 +38,7 @@ export LDFLAGS="%{ldflags}"
 
 ./configure \
 	--prefix-dir=%{_prefix} \
-	--install-dir=%{buildroot} \
-	--enable-debug
+	--install-dir=%{buildroot}
 
 %make_build VERBOSE=1
 
