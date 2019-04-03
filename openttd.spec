@@ -9,7 +9,6 @@ License:	GPLv2
 URL:		http://www.openttd.org
 Source0:	http://binaries.openttd.org/releases/%{version}/%{name}-%{version}%{?%{extra}:-%{extra}}-source.tar.xz
 Patch0:		openttd-1.4.4-compile.patch
-Patch1:		openttd-1.8.0-icu-61.patch
 BuildRequires:	pkgconfig(fontconfig)
 BuildRequires:	pkgconfig(freetype2)
 BuildRequires:	pkgconfig(liblzma)
