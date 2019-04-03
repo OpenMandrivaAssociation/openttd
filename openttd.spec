@@ -1,7 +1,7 @@
 %define extra %{nil}
 
 Name:		openttd
-Version:	1.8.0
+Version:	1.9.0
 Release:	%{?%{extra}:1.%{extra}.}1
 Summary:	An open source clone of the Microprose game "Transport Tycoon Deluxe" game
 Group:		Games/Strategy
@@ -9,7 +9,6 @@ License:	GPLv2
 URL:		http://www.openttd.org
 Source0:	http://binaries.openttd.org/releases/%{version}/%{name}-%{version}%{?%{extra}:-%{extra}}-source.tar.xz
 Patch0:		openttd-1.4.4-compile.patch
-Patch1:		openttd-1.8.0-icu-61.patch
 BuildRequires:	pkgconfig(fontconfig)
 BuildRequires:	pkgconfig(freetype2)
 BuildRequires:	pkgconfig(liblzma)
@@ -39,13 +38,12 @@ export LDFLAGS="%{ldflags}"
 
 ./configure \
 	--prefix-dir=%{_prefix} \
-	--install-dir=%{buildroot} \
-	--enable-debug
+	--install-dir=%{buildroot}
 
-%make VERBOSE=1
+%make_build VERBOSE=1
 
 %install
-%makeinstall_std
+%make_install
 
 #cleanup
 rm -rf %{buildroot}%{_datadir}/pixmaps
