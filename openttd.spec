@@ -1,7 +1,7 @@
 %define extra %{nil}
 
 Name:		openttd
-Version:	1.9.0
+Version:	1.9.1
 Release:	%{?%{extra}:1.%{extra}.}1
 Summary:	An open source clone of the Microprose game "Transport Tycoon Deluxe" game
 Group:		Games/Strategy
@@ -20,7 +20,7 @@ BuildRequires:	lzo-devel
 BuildRequires:	unzip
 BuildRequires:	desktop-file-utils
 Requires:	TiMidity++
-Requires:	openttd-opengfx >= 0.4.6
+Requires:	openttd-opengfx >= 0.5.5
 Requires:	openttd-opensfx
 Requires:	openttd-openmsx
 
