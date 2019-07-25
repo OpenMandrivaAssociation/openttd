@@ -1,3 +1,4 @@
+%global ldflags %{ldflags} -fuse-ld=bfd
 %define extra %{nil}
 
 Name:		openttd
