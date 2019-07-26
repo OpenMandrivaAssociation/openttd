@@ -1,4 +1,5 @@
-%global ldflags %{ldflags} -fuse-ld=bfd
+%define _disable_lto 1
+#global ldflags %{ldflags} -fuse-ld=bfd
 %define extra %{nil}
 
 Name:		openttd
