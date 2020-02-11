@@ -1,6 +1,6 @@
 %define _disable_lto 1
 #global ldflags %{ldflags} -fuse-ld=bfd
-%define extra rc1
+%define extra RC1
 
 Name:		openttd
 Version:	1.10.0
