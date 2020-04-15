@@ -1,0 +1,20 @@
+diff -up openttd-1.10.1/src/crashlog.cpp.omv~ openttd-1.10.1/src/crashlog.cpp
+--- openttd-1.10.1/src/crashlog.cpp.omv~	2020-04-16 00:28:00.583392302 +0200
++++ openttd-1.10.1/src/crashlog.cpp	2020-04-16 00:28:54.189984463 +0200
+@@ -7,6 +7,16 @@
+ 
+ /** @file crashlog.cpp Implementation of generic function to be called to log a crash */
+ 
++#define fadd libc_fadd
++#define fsub libc_fsub
++#define fmul libc_fmul
++#define fdiv libc_fdiv
++#include <cmath>
++#undef fadd
++#undef fsub
++#undef fmul
++#undef fdiv
++
+ #include "stdafx.h"
+ #include "crashlog.h"
+ #include "gamelog.h"

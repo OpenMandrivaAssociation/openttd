@@ -1,9 +1,9 @@
-%define _disable_lto 1
+#define _disable_lto 1
 #global ldflags %{ldflags} -fuse-ld=bfd
 #define extra RC1
 
 Name:		openttd
-Version:	1.10.0
+Version:	1.10.1
 Release:	1
 Summary:	An open source clone of the Microprose game "Transport Tycoon Deluxe" game
 Group:		Games/Strategy
@@ -11,6 +11,7 @@ License:	GPLv2
 URL:		http://www.openttd.org
 Source0:	https://cdn.openttd.org/openttd-releases/%{version}/%{name}-%{version}-source.tar.xz
 Patch0:		openttd-1.4.4-compile.patch
+Patch1:		openttd-1.10.1-glibc-2.31.patch
 BuildRequires:	pkgconfig(fontconfig)
 BuildRequires:	pkgconfig(freetype2)
 BuildRequires:	pkgconfig(liblzma)
@@ -38,7 +39,7 @@ export CFLAGS="%{optflags}"
 export CXXFLAGS="%{optflags}"
 export LDFLAGS="%{ldflags}"
 
-./configure \
+CC=%{__cc} CXX=%{__cxx} ./configure \
 	--prefix-dir=%{_prefix} \
 	--install-dir=%{buildroot}
 
