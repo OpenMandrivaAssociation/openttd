@@ -1,3 +1,4 @@
+%global debug_package %{nil}
 #define _disable_lto 1
 #global ldflags %{ldflags} -fuse-ld=bfd
 #define extra RC1
