@@ -11,7 +11,7 @@ Group:		Games/Strategy
 License:	GPLv2
 URL:		http://www.openttd.org
 Source0:	https://cdn.openttd.org/openttd-releases/%{version}/%{name}-%{version}-source.tar.xz
-Patch0:		openttd-1.4.4-compile.patch
+#Patch0:		openttd-1.4.4-compile.patch
 Patch1:		openttd-1.10.1-glibc-2.31.patch
 BuildRequires:	pkgconfig(fontconfig)
 BuildRequires:	pkgconfig(freetype2)
