@@ -13,6 +13,7 @@ URL:		http://www.openttd.org
 Source0:	https://cdn.openttd.org/openttd-releases/%{version}/%{name}-%{version}-source.tar.xz
 #Patch0:		openttd-1.4.4-compile.patch
 Patch1:		openttd-1.10.1-glibc-2.31.patch
+BuildRequires:	cmake
 BuildRequires:	pkgconfig(fontconfig)
 BuildRequires:	pkgconfig(freetype2)
 BuildRequires:	pkgconfig(liblzma)
@@ -40,14 +41,12 @@ export CFLAGS="%{optflags}"
 export CXXFLAGS="%{optflags}"
 export LDFLAGS="%{ldflags}"
 
-CC=%{__cc} CXX=%{__cxx} ./configure \
-	--prefix-dir=%{_prefix} \
-	--install-dir=%{buildroot}
+%cmake
 
-%make_build VERBOSE=1
+%make_build
 
 %install
-%make_install
+%make_install -C build
 
 #cleanup
 rm -rf %{buildroot}%{_datadir}/pixmaps
