@@ -5,7 +5,7 @@
 #define extra RC1
 
 Name:		openttd
-Version:	12.0
+Version:	12.1
 Release:	1
 Summary:	An open source clone of the Microprose game "Transport Tycoon Deluxe" game
 Group:		Games/Strategy
