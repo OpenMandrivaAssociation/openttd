@@ -1,12 +1,8 @@
-#global debug_package %{nil}
 %define _empty_manifest_terminate_build 0
-#define _disable_lto 1
-#global ldflags %{ldflags} -fuse-ld=bfd
-#define extra RC1
 
 Name:		openttd
 Version:	12.1
-Release:	1
+Release:	2
 Summary:	An open source clone of the Microprose game "Transport Tycoon Deluxe" game
 Group:		Games/Strategy
 License:	GPLv2
