@@ -57,7 +57,6 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications \
 	%{buildroot}%{_datadir}/applications/openttd.desktop
 
 %files
-%doc *.txt
 %doc %{_docdir}/openttd
 %{_gamesbindir}/openttd
 %{_gamesdatadir}/openttd
