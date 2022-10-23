@@ -36,9 +36,12 @@ Deluxe" game.
 %autosetup -p1 -n %{name}-%{version}
 
 %build
-export CFLAGS="%{optflags}"
-export CXXFLAGS="%{optflags}"
-export LDFLAGS="%{ldflags}"
+%ifarch %{x86_64}
+# Workaround for clang 15.0.3 generating an unresolvable reference to
+# _newgrf_textrefstack in openttd 12.2
+export CC=gcc
+export CXX=g++
+%endif
 
 %cmake
 
