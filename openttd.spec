@@ -2,7 +2,7 @@
 
 Name:		openttd
 Version:	12.2
-Release:	2
+Release:	3
 Summary:	An open source clone of the Microprose game "Transport Tycoon Deluxe" game
 Group:		Games/Strategy
 License:	GPLv2
