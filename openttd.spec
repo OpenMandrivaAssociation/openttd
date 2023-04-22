@@ -1,8 +1,8 @@
 %define _empty_manifest_terminate_build 0
 
 Name:		openttd
-Version:	12.2
-Release:	3
+Version:	13.1
+Release:	1
 Summary:	An open source clone of the Microprose game "Transport Tycoon Deluxe" game
 Group:		Games/Strategy
 License:	GPLv2
@@ -37,8 +37,8 @@ Deluxe" game.
 
 %build
 %ifarch %{x86_64}
-# Workaround for clang 15.0.3 generating an unresolvable reference to
-# _newgrf_textrefstack in openttd 12.2
+# Workaround for clang 16.0.2 generating an unresolvable reference to
+# _newgrf_textrefstack in openttd 13.1
 export CC=gcc
 export CXX=g++
 %endif
