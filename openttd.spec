@@ -1,7 +1,7 @@
 %define _empty_manifest_terminate_build 0
 
 Name:		openttd
-Version:	13.1
+Version:	13.4
 Release:	1
 Summary:	An open source clone of the Microprose game "Transport Tycoon Deluxe" game
 Group:		Games/Strategy
