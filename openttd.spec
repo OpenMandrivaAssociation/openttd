@@ -8,7 +8,7 @@ Group:		Games/Strategy
 License:	GPLv2
 URL:		http://www.openttd.org
 Source0:	https://cdn.openttd.org/openttd-releases/%{version}/%{name}-%{version}-beta1-source.tar.xz
-Patch1:		openttd-1.10.1-glibc-2.31.patch
+#Patch1:		openttd-1.10.1-glibc-2.31.patch
 BuildRequires:	cmake
 BuildRequires:	grfcodec
 BuildRequires:	pkgconfig(allegro)
