@@ -2,12 +2,12 @@
 
 Name:		openttd
 Version:	14.0
-Release:	0.rc1.0
+Release:	0.rc2.0
 Summary:	An open source clone of the Microprose game "Transport Tycoon Deluxe" game
 Group:		Games/Strategy
 License:	GPLv2
 URL:		http://www.openttd.org
-Source0:	https://cdn.openttd.org/openttd-releases/%{version}/%{name}-%{version}-RC1-source.tar.xz
+Source0:	https://cdn.openttd.org/openttd-releases/%{version}/%{name}-%{version}-RC2-source.tar.xz
 #Patch1:		openttd-1.10.1-glibc-2.31.patch
 BuildRequires:	cmake
 BuildRequires:	grfcodec
@@ -33,15 +33,15 @@ OpenTTD is an open source clone of the Microprose game "Transport Tycoon
 Deluxe" game.
 
 %prep
-%autosetup -p1 -n %{name}-%{version}-RC1
+%autosetup -p1 -n %{name}-%{version}-RC2
 
 %build
-%ifarch %{x86_64}
+#ifarch %{x86_64}
 # Workaround for clang 16.0.2 generating an unresolvable reference to
 # _newgrf_textrefstack in openttd 13.1
-export CC=gcc
-export CXX=g++
-%endif
+#export CC=gcc
+#export CXX=g++
+#endif
 
 %cmake
 
