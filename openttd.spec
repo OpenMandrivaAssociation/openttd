@@ -9,6 +9,7 @@ License:	GPLv2
 URL:		https://www.openttd.org
 Source0:	https://cdn.openttd.org/openttd-releases/%{version}/%{name}-%{version}-source.tar.xz
 
+BuildRequires:	make
 BuildRequires:	cmake
 BuildRequires:	grfcodec
 BuildRequires:	pkgconfig(allegro)
